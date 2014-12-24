@@ -10,6 +10,10 @@ public class MarathonException extends Exception {
 		this.message = message;
 	}
 	
+	public int getStatus() {
+		return status;
+	}
+	
 	@Override
 	public String getMessage() {
 		return message + " (http status: " + status + ")";
