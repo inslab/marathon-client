@@ -69,7 +69,7 @@ public interface Marathon {
 	void cancelDeploymentAndRollback(@Named("deploymentId") String id);
 	
 	@RequestLine("DELETE /v2/deployments/{deploymentId}?force=true")
-	void cancelDeployment(@Named("deploymentId") String id);
+	void cancelDeployment(@Named("deploymentId") String id) throws MarathonException;
 
     // Event Subscriptions
 
