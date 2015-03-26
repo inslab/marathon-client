@@ -8,6 +8,8 @@ import mesosphere.marathon.client.model.v2.App;
 import mesosphere.marathon.client.model.v2.DeleteAppTaskResponse;
 import mesosphere.marathon.client.model.v2.DeleteAppTasksResponse;
 import mesosphere.marathon.client.model.v2.Deployment;
+import mesosphere.marathon.client.model.v2.Event;
+import mesosphere.marathon.client.model.v2.EventResponse;
 import mesosphere.marathon.client.model.v2.GetAppResponse;
 import mesosphere.marathon.client.model.v2.GetAppTasksResponse;
 import mesosphere.marathon.client.model.v2.GetAppsResponse;
@@ -72,7 +74,15 @@ public interface Marathon {
 	void cancelDeployment(@Named("deploymentId") String id) throws MarathonException;
 
     // Event Subscriptions
-
+	@RequestLine("POST /v2/eventSubscriptions?callbackUrl={callbackUrl}")
+	EventResponse registerCallback(@Named("callbackUrl") String callbackUrl);
+	
+	@RequestLine("GET /v2/eventSubscription")
+	Event getCallbacks();
+	
+	@RequestLine("DELETE /v2/eventSubscriptions?callbackUrl={callbackUrl}")
+	EventResponse unregisterCallback(@Named("callbackUrl") String callbackUrl);
+	
     // Queue
 
     // Server Info
