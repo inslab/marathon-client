@@ -2,7 +2,7 @@ package mesosphere.marathon.client.model.v2;
 
 import mesosphere.marathon.client.utils.ModelUtils;
 
-public class EventResponse {
+public class SubscriptionResponse {
 
 	private String callbackUrl;
 	private String clientIp;

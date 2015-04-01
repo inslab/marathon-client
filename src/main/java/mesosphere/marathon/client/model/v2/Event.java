@@ -1,19 +1,29 @@
 package mesosphere.marathon.client.model.v2;
 
-import java.util.List;
+
+import java.util.Date;
 
 import mesosphere.marathon.client.utils.ModelUtils;
 
 public class Event {
 
-	private List<String> callbackUrls;
+	protected String eventType;
+	protected Date timestamp;
 
-	public List<String> getCallbackUrls() {
-		return callbackUrls;
+	public String getEventType() {
+		return eventType;
 	}
 
-	public void setCallbackUrls(List<String> callbackUrls) {
-		this.callbackUrls = callbackUrls;
+	public void setEventType(String eventType) {
+		this.eventType = eventType;
+	}
+
+	public Date getTimestamp() {
+		return timestamp;
+	}
+
+	public void setTimestamp(Date timestamp) {
+		this.timestamp = timestamp;
 	}
 
 	@Override
