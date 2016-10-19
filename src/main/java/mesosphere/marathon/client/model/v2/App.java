@@ -22,6 +22,7 @@ public class App {
 	private Collection<Task> tasks;
 	private Integer tasksStaged;
 	private Integer tasksRunning;
+	private Map<String, String> labels;
 
 	public String getId() {
 		return id;
@@ -159,10 +160,17 @@ public class App {
 	public void setTasksRunning(Integer tasksRunning) {
 		this.tasksRunning = tasksRunning;
 	}
+	
+	public Map<String, String> getLabels() {
+		return labels;
+	}
+
+	public void setLabels(Map<String, String> labels) {
+		this.labels = labels;
+	}
 
 	@Override
 	public String toString() {
 		return ModelUtils.toString(this);
 	}
-
 }
