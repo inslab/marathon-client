@@ -27,6 +27,9 @@ public interface Marathon {
 
 	@RequestLine("GET /v2/apps/{id}")
 	GetAppResponse getApp(@Named("id") String id) throws MarathonException;
+	
+	@RequestLine("POST /v2/apps/{id}/restart")
+	Result restartApp(@Named("id") String id) throws MarathonException;
 
 	@RequestLine("GET /v2/apps/{id}/tasks")
 	GetAppTasksResponse getAppTasks(@Named("id") String id);
