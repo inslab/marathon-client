@@ -28,7 +28,7 @@ public interface Marathon {
 	@RequestLine("GET /v2/apps/{id}")
 	GetAppResponse getApp(@Named("id") String id) throws MarathonException;
 	
-	@RequestLine("POST /v2/apps/{id}/restart")
+	@RequestLine("POST /v2/apps/{id}/restart?force=true")
 	Result restartApp(@Named("id") String id) throws MarathonException;
 
 	@RequestLine("GET /v2/apps/{id}/tasks")
@@ -58,7 +58,7 @@ public interface Marathon {
 	@RequestLine("POST /v2/groups")
 	Result createGroup(Group group) throws MarathonException;
 	
-	@RequestLine("DELETE /v2/groups/{id}")
+	@RequestLine("DELETE /v2/groups/{id}?force=true")
 	Result deleteGroup(@Named("id") String id) throws MarathonException;
 	
 	@RequestLine("GET /v2/groups/{id}")
