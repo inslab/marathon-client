@@ -23,6 +23,7 @@ public class App {
 	private Integer tasksStaged;
 	private Integer tasksRunning;
 	private Map<String, String> labels;
+	private List<HealthCheck> healthChecks;
 
 	public String getId() {
 		return id;
@@ -167,6 +168,14 @@ public class App {
 
 	public void setLabels(Map<String, String> labels) {
 		this.labels = labels;
+	}
+
+	public List<HealthCheck> getHealthChecks() {
+		return healthChecks;
+	}
+
+	public void setHealthChecks(List<HealthCheck> healthChecks) {
+		this.healthChecks = healthChecks;
 	}
 
 	@Override
