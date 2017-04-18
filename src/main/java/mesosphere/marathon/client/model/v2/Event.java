@@ -8,6 +8,8 @@ import mesosphere.marathon.client.utils.ModelUtils;
 public class Event {
 
 	protected String eventType;
+	protected String appId;
+	protected String taskId;
 	protected Date timestamp;
 
 	public String getEventType() {
@@ -16,6 +18,22 @@ public class Event {
 
 	public void setEventType(String eventType) {
 		this.eventType = eventType;
+	}
+
+	public String getAppId() {
+		return appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+	}
+
+	public String getTaskId() {
+		return taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
 	}
 
 	public Date getTimestamp() {

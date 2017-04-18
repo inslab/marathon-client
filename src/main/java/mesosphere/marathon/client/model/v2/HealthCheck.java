@@ -14,6 +14,7 @@ public class HealthCheck {
     private int intervalSeconds;
     private int timeoutSeconds;
     private int maxConsecutiveFailures;
+    private boolean ignoreHttp1xx;
 
     public String getProtocol() {
         return protocol;
@@ -69,6 +70,14 @@ public class HealthCheck {
 
     public void setMaxConsecutiveFailures(int maxConsecutiveFailures) {
         this.maxConsecutiveFailures = maxConsecutiveFailures;
+    }
+
+    public boolean isIgnoreHttp1xx() {
+        return ignoreHttp1xx;
+    }
+
+    public void setIgnoreHttp1xx(boolean ignoreHttp1xx) {
+        this.ignoreHttp1xx = ignoreHttp1xx;
     }
 
     @Override

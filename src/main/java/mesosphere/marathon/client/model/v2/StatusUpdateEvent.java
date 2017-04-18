@@ -5,9 +5,7 @@ import java.util.List;
 public class StatusUpdateEvent extends Event {
 
 	private String slaveId;
-	private String taskId;
 	private String taskStatus;
-	private String appId;
 	private String host;
 	private List<Integer> ports;
 	private String version;
@@ -20,28 +18,12 @@ public class StatusUpdateEvent extends Event {
 		this.slaveId = slaveId;
 	}
 
-	public String getTaskId() {
-		return taskId;
-	}
-
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-	}
-
 	public String getTaskStatus() {
 		return taskStatus;
 	}
 
 	public void setTaskStatus(String taskStatus) {
 		this.taskStatus = taskStatus;
-	}
-
-	public String getAppId() {
-		return appId;
-	}
-
-	public void setAppId(String appId) {
-		this.appId = appId;
 	}
 
 	public String getHost() {
